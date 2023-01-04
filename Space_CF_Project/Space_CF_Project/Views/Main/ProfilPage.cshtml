@@ -1,0 +1,180 @@
+﻿@model Space_CF_Project.Models.Entity.TBLUser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="TR">
+<body>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!-- Favicons -->
+        <link href="icon" rel="icon">
+        <link href="icon" rel="apple-touch-icon">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/aos/aos.css" rel="stylesheet">
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/remixicon/remixicon.css" rel="stylesheet">
+        <link href="~/Tasarım_Dosyaları/Main/Main-vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="~/Tasarım_Dosyaları/Main/Main-css/style.css" rel="stylesheet">
+    </head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>@ViewBag.ProfilAD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+        <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+        <meta name="author" content="freehtml5.co" />
+
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="~/Tasarım_Dosyaları/Profil/css/animate.css">
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="~/Tasarım_Dosyaları/Profil/css/icomoon.css">
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="~/Tasarım_Dosyaları/Profil/css/bootstrap.css">
+
+        <!-- Theme style  -->
+        <link rel="stylesheet" href="~/Tasarım_Dosyaları/Profil/css/style.css">
+
+        <!-- Modernizr JS -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="flex-container d-flex align-items-center justify-content-between">
+
+            <a href="HomePage" class="logo d-flex align-items-center">
+                <img src="~/Tasarım_Dosyaları/Main/Main-img/logo.png" alt="">
+                <span>Space</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="active" href="HomePage">Anasayfa</a></li>
+                    <li><a class="active" href="BlogPage">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Seçenekler</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/Main/ProfilPage">PROFİL</a></li>
+                            <li><a href="/Giris/Login/">ÇIKIŞ</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="getstarted scrollto" href="Paylasım">Paylaşım Yap</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+        <!-- ======= Blog Section =======-->
+        <section>
+
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/purecounter/purecounter_vanilla.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/aos/aos.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/swiper/swiper-bundle.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/php-email-form/validate.js"></script>
+
+            <!-- Template Main JS File -->
+            <script src="~/Tasarım_Dosyaları/Main/Main-js/main.js"></script>
+        </section>
+    </main>
+
+    <html>
+    <body>
+
+        <div class="fh5co-loader"></div>
+
+        <div id="page">
+            <header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image: url(~/Tasarım_Dosyaları/Profil/images/.jpg);" data-stellar-background-ratio="0.5">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="display-t js-fullheight">
+                                <div class="display-tc js-fullheight animate-box" data-animate-effect="">
+                                    <div class="profile-thumb"></div>
+                                    <h1><span>PROFİL SAYFAM</span></h1>
+                                    <p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="fh5co-about" class="animate-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <h2>Kullanıcı Bilgileri</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="info" method="post">
+                            <li><span class="first-block">Ad:</span><span class="second-block">@ViewData["UserAd"]</span></li>
+                            <li><span class="first-block">Soyad:</span><span class="second-block">@ViewData["UserSoyad"]</span></li>
+                            <li><span class="first-block">Mail:</span><span class="second-block">@ViewData["UserMail"]</span></li>
+
+                        </ul>
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+        
+        <!-- jQuery -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/jquery.waypoints.min.js"></script>
+        <!-- Stellar Parallax -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/jquery.stellar.min.js"></script>
+        <!-- Easy PieChart -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/jquery.easypiechart.min.js"></script>
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+        <script src="~/Tasarım_Dosyaları/Profil/js/google_map.js"></script>
+
+        <!-- Main -->
+        <script src="~/Tasarım_Dosyaları/Profil/js/main.js"></script>
+
+    </body>
+</html>
+
+
+</body>
+
+</html>
+
+

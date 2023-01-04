@@ -1,0 +1,612 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F694D9F-EA1F-4807-B17B-122A4A4F929E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Space_CF_Project</RootNamespace>
+    <AssemblyName>Space_CF_Project</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44317</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Cookies, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Cookies.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.KeyDerivation.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.DataProtection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.DataProtection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Identity, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Identity.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Identity.Core.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.WebEncoders, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.WebEncoders.2.2.0\lib\netstandard2.0\Microsoft.Extensions.WebEncoders.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.4.5.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.5.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.5.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\spaceblue.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\ses.mp3" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\animate.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\bootstrap.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\flexslider.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\icomoon.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\style.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon.svg" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\demo-files\demo.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\demo-files\demo.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\demo.html" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\fonts\icomoon.svg" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\Read Me.txt" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\style.css" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\blog-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\blog-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\cover_bg_1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\cover_bg_3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\loader.gif" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\loc.png" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-6.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-7.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\portfolio-8.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\user-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\bootstrap.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\google_map.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\jquery.easing.1.3.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\jquery.easypiechart.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\jquery.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\jquery.stellar.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\jquery.waypoints.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\main.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\modernizr-2.6.2.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\respond.min.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\animate.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\bootstrap.min.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\flex-slider.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\font-awesome.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\fullpage.min.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\owl.carousel.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\responsive.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-css\templatemo-style.css" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\flexslider-icon.svg" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\fontawesome-webfont.svg" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\slick.svg" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-images\mouse-scroll.png" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-images\space.mp4" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\bootstrap.min.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\custom.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\form.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\fullpage.min.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\jquery.inview.min.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\jquery.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\owl.carousel.min.js" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-js\scrolloverflow.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-css\style.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-css\stylııe.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-forms\contact.php" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\about.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\apple-touch-icon.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-author.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-inside-post.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-recent-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-recent-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-recent-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-recent-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\blog-recent-5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\blog\comments-6.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-1.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-2.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-3.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-4.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-5.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-6.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-7.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\clients\client-8.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\favicon.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\features-2.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\features-3.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\features.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\footer-bg.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\hero-bg.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\hero-img.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\hero-img.svg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\logo.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-6.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-7.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-8.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\portfolio\portfolio-9.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\pricing-business.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\pricing-free.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\pricing-starter.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\pricing-ultimate.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team-shape.svg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team\1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team\2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team\3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team\4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\team\5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\testimonials\testimonials-1.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\testimonials\testimonials-2.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\testimonials\testimonials-3.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\testimonials\testimonials-4.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\testimonials\testimonials-5.jpg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\values-1.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\values-2.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-img\values-3.png" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-js\main.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\aos\aos.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\aos\aos.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap-icons\index.html" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\css\glightbox.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\css\plyr.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\css\plyr.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\js\glightbox.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\php-email-form\validate.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\purecounter\purecounter_vanilla.js" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.svg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\bootstrap.css.map" />
+    <Content Include="Tasarım_Dosyaları\Profil\css\style.css.map" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon.eot" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon.ttf" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon.woff" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\fonts\icomoon.eot" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\fonts\icomoon.ttf" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\fonts\icomoon.woff" />
+    <Content Include="Tasarım_Dosyaları\Profil\fonts\icomoon\icomoon\selection.json" />
+    <Content Include="Tasarım_Dosyaları\Profil\images\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\js\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\.DS_Store" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_alerts.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_background-variant.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_buttons.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_center-block.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_forms.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_gradients.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_grid-framework.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_grid.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_hide-text.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_image.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_labels.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_list-group.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_nav-divider.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_nav-vertical-align.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_opacity.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_pagination.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_panels.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_progress-bar.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_reset-filter.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_resize.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_responsive-visibility.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_size.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_tab-focus.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_table-row.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_text-emphasis.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_text-overflow.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\mixins\_vendor-prefixes.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_alerts.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_badges.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_breadcrumbs.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_button-groups.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_buttons.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_carousel.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_close.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_code.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_component-animations.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_dropdowns.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_forms.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_glyphicons.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_grid.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_input-groups.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_jumbotron.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_labels.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_list-group.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_media.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_mixins.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_modals.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_navbar.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_navs.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_normalize.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_pager.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_pagination.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_panels.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_popovers.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_print.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_progress-bars.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_responsive-embed.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_responsive-utilities.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_scaffolding.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_tables.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_theme.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_thumbnails.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_tooltip.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_type.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_utilities.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_variables.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\bootstrap\_wells.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\style.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\_bootstrap-compass.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\_bootstrap-mincer.scss" />
+    <Content Include="Tasarım_Dosyaları\Profil\sass\_bootstrap-sprockets.scss" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GirisController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CONTEXT.cs" />
+    <Compile Include="Models\Entity\TBLGonderi.cs" />
+    <Compile Include="Models\Entity\TBLKategori.cs" />
+    <Compile Include="Models\Entity\TBLStatePaylasım.cs" />
+    <Compile Include="Models\Entity\TBLUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <None Include="Views\Giris\Login.cshtml" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\Flaticon.woff" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\flexslider-icon.eot" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\flexslider-icon.ttf" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\flexslider-icon.woff" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\fontawesome-webfont.eot" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\fontawesome-webfont.ttf" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\fontawesome-webfont.woff" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\fontawesome-webfont.woff2" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\FontAwesome.otf" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\slick.eot" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\slick.ttf" />
+    <Content Include="Tasarım_Dosyaları\Login\Login-fonts\slick.woff" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.eot" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.less" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.ttf" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.woff" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\remixicon\remixicon.woff2" />
+    <Content Include="Tasarım_Dosyaları\Main\Main-vendor\swiper\swiper-bundle.min.js.map" />
+    <Content Include="Views\Giris\SignUp.cshtml" />
+    <Content Include="Views\Giris\SifremiUnuttum.cshtml" />
+    <Content Include="Views\Main\BlogPage.cshtml" />
+    <Content Include="Views\Main\BlogSinglePage.cshtml" />
+    <Content Include="Views\Main\HomePage.cshtml" />
+    <Content Include="Views\Main\Paylasım.cshtml" />
+    <Content Include="Views\Main\PortfolioDetails.cshtml" />
+    <Content Include="Views\Main\ProfilPage.cshtml" />
+    <Content Include="Views\Main\StateBlogPage.cshtml" />
+    <Content Include="Views\Main\StateBlogSinglePage.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65057</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44317/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

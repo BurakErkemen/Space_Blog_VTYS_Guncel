@@ -1,0 +1,118 @@
+﻿@model Space_CF_Project.Models.Entity.TBLGonderi
+
+<!DOCTYPE html>
+<html lang="TR">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="icon" rel="icon">
+    <link href="icon" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Tasarım_Dosyaları/Main/Main-vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="~/Tasarım_Dosyaları/Main/Main-css/style.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid  d-flex align-items-center justify-content-between">
+
+            <a href="HomePage" class="logo d-flex align-items-center">
+                <img src="~/Tasarım_Dosyaları/Main/Main-img/logo.png" alt="">
+                <span>Space</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="active" href="HomePage">Anasayfa</a></li>
+                    <li><a class="active" href="BlogPage">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Seçenekler</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="/Main/ProfilPage">PROFİL</a></li>
+                            <li><a href="/Giris/Login/">ÇIKIŞ</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="getstarted scrollto" href="Paylasım">Paylaşım Yap</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs =======-->
+        <section class="breadcrumbs">
+            <div class="">
+
+                <ol>
+                    <li><a href="HomePage">Anasayfa</a></li>
+                    <li>Paylaşım Yap</li>
+                </ol>
+                <h2>Blog Paylaş</h2>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Blog Section =======-->
+        <section>
+            <form asp-controller="Main" asp-action="Paylasım" method="post">
+                @Html.AntiForgeryToken()
+                <div class="reply-form">
+                    <h4 class="input-field" style="background-color:#031A3D; width:15%; color:white">Gönderi Başlığı</h4>
+
+                    <div class="input-field">
+                        <input type="text" style="width: 50%; background-color: #FFE5E5; color: #000000; font-size: 24px " rows="1" class="form-control" name="GonBaslık" required placeholder="Gönderi Başlığını Giriniz...">
+                    </div><p></p>
+                    <h4 class="input-field" style="background-color: #031A3D; width: 15%; color: white ">Gönderi Paylaş</h4>
+
+                    <div class="input-field">
+                        <textarea style="width:75%;background-color:#FFE5E5;color:#000000;font-size:24px" rows="18" class="form-control" name="GonText" required placeholder="Gönderi İçeriğinizi Giriniz..."></textarea>
+                    </div>
+                    <h4 class="input-field" style="background-color: #031A3D; width: 15%; color: white "> Ek Dosyası Ekle</h4>
+                    <div class="input-field">
+                        <p></p>
+                        <input type="file" class="form-control" name="GonPicture" style="width: 75%; background-color: #FFE5E5; color: #000000">
+                    </div><p></p>
+                    <div>
+                        <input type="text" class="form-control" name="KatID" style="width: 15%; background-color: #FFE5E5; color: #000000" placeholder="Kategori Numarasını Giriniz">
+
+                    </div>
+                    <p></p>
+                </div>
+                <p></p>
+                <div class="input-group">
+                    <button type="submit" style="background-color: #031A3D; color: white; width: 50%; font-size: 24px" name="TBLGonderis" class="btn">Paylaş</button>
+                </div>
+            </form>
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/purecounter/purecounter_vanilla.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/aos/aos.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/swiper/swiper-bundle.min.js"></script>
+            <script src="~/Tasarım_Dosyaları/Main/Main-vendor/php-email-form/validate.js"></script>
+
+            <!-- Template Main JS File -->
+            <script src="~/Tasarım_Dosyaları/Main/Main-js/main.js"></script>
+        </section>
+    </main>
+
+</body>
+
+</html>
